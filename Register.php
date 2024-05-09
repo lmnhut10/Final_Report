@@ -5,8 +5,8 @@
                     <div class="breadcrumb__text">
                         <h2 style="color:black">Register</h2>
                         <div class="breadcrumb__option">
-                            <a href="?page=content" style="color:black">Home</a>
-                            <span style="color:black">Register</span>
+                            <!-- <a href="?page=content" style="color:black">Home</a>
+                            <span style="color:black">Register</span> -->
                         </div>
                     </div>
                 </div>
@@ -77,10 +77,8 @@ if(isset($_POST['btnRegister']))
 }
 ?>
 <div class="container">
-        <h2>Member Registration</h2>
 			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
-					<div class="form-group">
-						    
+					<div class="form-group">					    
                             <label for="txtTen" class="col-sm-2 control-label">Username(*):  </label>
 							<div class="col-sm-10">
 							      <input type="text" name="txtUsername" id="txtUsername" class="form-control" placeholder="Username" value="<?php if(isset($us)) echo $us; ?>"/>
