@@ -16,7 +16,7 @@
 
                         <?php Category_List($conn,$sql ); ?>
                             
-                        </ul>
+                        </ul> 
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -54,10 +54,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Products Management</h2>
+                        <h2 style="color:black">Products Management</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Products Management</span>
+                            <!-- <a href="./index.html">Home</a>
+                            <span>Products Management</span> -->
                         </div>
                     </div>
                 </div>

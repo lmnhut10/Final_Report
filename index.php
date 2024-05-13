@@ -28,10 +28,6 @@ session_start();
 //phpinfo();
 include_once("connection.php");
 ?>
-    
-    
-
-    <!-- Humberger Begin -->
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
@@ -131,7 +127,7 @@ include_once("connection.php");
                     </div>
                 </div>
     </div>
-    <!-- Humberger End -->
+   
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -271,7 +267,8 @@ include_once("connection.php");
                                  
                                 
                                  <li><a href="?page=contact">Contact</a></li>
-                                 <li><a href="?page=shopping-cart">Shoping Cart</a></li>
+                                 
+                                 <!-- <li><a href="?page=shopping-cart">SHOPPING CART</a></li> -->
                                  
                              </ul> 
                              

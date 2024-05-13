@@ -47,17 +47,17 @@
         </div>
     </section>
     <!-- Hero Section End -->
-
+ 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/Background.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Category Management</h2>
+                        <h2 style="color:black">Category Management</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Update Catgory</span>
+                            <!-- <a href="./index.html">Home</a>
+                            <span>Update Catgory</span> -->
                         </div>
                     </div>
                 </div>

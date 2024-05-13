@@ -108,7 +108,14 @@ $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" name="btnCart" class="primary-btn">ADD TO CARD</button>
+
+  
+
+                            <button type="submit" name="btnCart" class="primary-btn">ADD TO CART</button>
+
+
+  
+                            
                             <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         </form>
                         <ul>
@@ -127,7 +134,7 @@ $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                     <div class="product__details__tab">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
@@ -166,14 +173,14 @@ $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
     <!-- Product Details Section End -->
 
     <!-- Related Product Section Begin -->
-    <section class="related-product">
+    <!-- <section class="related-product">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -245,7 +252,7 @@ $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Related Product Section End -->
 <?php }
     if(isset($_POST['btnCart']))

@@ -125,7 +125,7 @@
                 unset($_SESSION['cart']);
             }
             echo '<meta http-equiv="refresh" content="0; URL=?page=shopping-cart"/>' ;          
-            echo "<script> alert('successful ');location.href='?page=content';</script>";
+            echo "<script> alert('Checkout successful ');location.href='?page=content';</script>";
             
         }
         }?> 
@@ -179,7 +179,7 @@
                 <div class="col-lg-6">
                     <div class="shoping__continue">
                         <div class="shoping__discount">
-                            <h5>Discount Codes</h5>
+                            <!-- <h5>Discount Codes</h5> -->
                             <form action="#">
                                 <!-- <input type="text" placeholder="Enter your coupon code">
                                 <button type="submit" class="site-btn">APPLY COUPON</button> -->
