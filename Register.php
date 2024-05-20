@@ -180,7 +180,7 @@ if(isset($_POST['btnRegister']))
                                   <select name="slYear" id="slYear" class="form-control">
                                     <option value="0">Choose Year</option>
                                     <?php
-                                        for($i=1970;$i<=2024;$i++)
+                                        for($i=1990;$i<=2024;$i++)
                                          {
                                              if($i==$year){
                                                  echo "<option value='".$i."' selected=\"selected\">".$i."</option>";
