@@ -286,7 +286,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>21</span> Products found</h6>
+                                    <h6><span>all</span> Products found</h6>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -337,12 +337,12 @@
                         
                         
                     </div>
-                    <div class="product__pagination">
+                    <!-- <div class="product__pagination">
                         <a href="#">1</a>
                         <a href="#">2</a>
                         <a href="#">3</a>
                         
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
