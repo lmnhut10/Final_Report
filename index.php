@@ -229,10 +229,10 @@ include_once("connection.php");
                                     
                                 </ul>
                             </li>
-                                    <li><a href="?page=content">Pages</a>
+                                    <!-- <li><a href="?page=content">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     
-                                    <li><a href="?page=shopping-cart">Shoping Cart</a></li>
+                                    <li><a href="?page=shopping-cart">Shoping Cart</a></li> -->
                                     <!-- <li><a href="?page=checkout">Check Out</a></li> -->
                                     
                                 </ul>
