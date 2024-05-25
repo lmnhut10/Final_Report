@@ -1,18 +1,18 @@
-<?php 
-if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
-?>
-<script>
-        function deleteConfirm(){
-            if(confirm("Are you sure?")){
+<?php
+if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
+    ?>
+    <script>
+        function deleteConfirm() {
+            if (confirm("Are you sure?")) {
                 return true;
             }
-            else{
+            else {
                 return false;
             }
         }
     </script>
-    
-   
+
+
 
     <!-- Hero Section Begin -->
     <section class="hero hero-normal">
@@ -23,16 +23,16 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
                             <span>All Departments</span>
-                        <ul>
-                            <?php Department($conn); ?>
-                        </ul>
+                            <ul>
+                                <?php Department($conn); ?>
+                            </ul>
                         </div>
-                        
-                        <ul>
-                        <li ><a  href="?page=pm">All</a></li>
 
-                        <?php Category_List($conn ); ?>
-                            
+                        <ul>
+                            <li><a href="?page=pm">All</a></li>
+
+                            <?php Category_List($conn); ?>
+
                         </ul>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                                 <div class="hero__search__categories">
                                     All Categories
                                     <span class="arrow_carrot-down"></span>
-                                    
+
                                 </div>
                                 <input type="text" placeholder="What do you need?">
                                 <button type="submit" class="site-btn">SEARCH</button>
@@ -81,7 +81,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
             </div>
         </div>
     </section>
-<!-- Breadcrumb Section End -->
+    <!-- Breadcrumb Section End -->
 
     <!-- Product Management Section Begin -->
     <section class="shoping-cart spad">
@@ -97,95 +97,95 @@ if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th><a href="?page=addp">Add</a></th>
-                                    
-                                    
+
+
                                 </tr>
                             </thead>
                             <?php //del button on pm 
-                                include_once("connection.php");
-                                if(isset($_GET["function"])=="del"){
-                                    if(isset($_GET["id"])){
-                                        $id=$_GET["id"];
-                                        $sq="SELECT pro_image from product WHERE product_id='$id'";
-                                        $res= mysqli_query($conn, $sq);
-                                        $row= mysqli_fetch_array($res, MYSQLI_ASSOC);
-                                        $filePic= $row['pro_image'];
-                                        mysqli_query($conn,"DELETE FROM product WHERE product_id='$id'");
+                                include_once ("connection.php");
+                                if (isset($_GET["function"]) == "del") {
+                                    if (isset($_GET["id"])) {
+                                        $id = $_GET["id"];
+                                        $sq = "SELECT pro_image from product WHERE product_id='$id'";
+                                        $res = mysqli_query($conn, $sq);
+                                        $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+                                        $filePic = $row['pro_image'];
+                                        mysqli_query($conn, "DELETE FROM product WHERE product_id='$id'");
                                         echo '<meta http-equiv="refresh" content="0;URL =?page=pm"/>'
-                                        ?>
-                                        <!-- <script> document.getElementById("CMM").click();</script>  -->
-                                        
-                                        <?php
-                                        
+                                            ?>
+                                    <!-- <script> document.getElementById("CMM").click();</script>  -->
+
+                                    <?php
+
                                     }
-                                ?>
-                                    
-            
-                                <?php  
-                                }
-                                ?>
-                            <tbody>
-                            <?php //
-                                 if(isset($_GET['id'])){
-                                    $id=$_GET['id'];
-                                    $result = mysqli_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
-                                    from product, category where product.cat_id = category.cat_id and '$id'=category.cat_id ");
-            
-                                }else{
-                                    $result = mysqli_query($conn,"SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
-                                    from product, category where product.cat_id = category.cat_id ");
-                                }
-                                while($row=mysqli_fetch_array($result, MYSQLI_ASSOC)) { 
                                     ?>
 
 
-
-                                <tr>
-                                    <td class="shoping__cart__item" style="width: 1000px">
-                                        <img src="img/<?php echo $row['pro_image'] ?>" alt="" height="200px" width="200px">
-                                        <h5><?php echo $row["product_name"]; ?></h5>
-                                    </td>
-                                    <td class="shoping__cart__item">
-                                        
-                                        <h5><?php echo $row["cat_name"]; ?></h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        $<?php echo $row["price"]; ?>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        
-                                            
-                                                <?php echo $row["pro_qty"]; ?>
-                                            
-                                        
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                       <a href="?page=edit&&id=<?php echo $row['product_id'] ?>"> EDIT</a>
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        
-                                        <a href="?page=pm&&function=del&&id=<?php echo $row["product_id"];?>" onclick="return deleteConfirm()"><span class="icon_close"></span>
-                                        
-                                    </td>
-                                </tr>
-                                <?php
-                                     
-                                     }
+                            <?php
+                                }
                                 ?>
+                            <tbody>
+                                <?php //
+                                    if (isset($_GET['id'])) {
+                                        $id = $_GET['id'];
+                                        $result = mysqli_query($conn, "SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
+                                    from product, category where product.cat_id = category.cat_id and '$id'=category.cat_id ");
+
+                                    } else {
+                                        $result = mysqli_query($conn, "SELECT product.product_id, product.product_name, product.price, product.pro_qty, product.pro_image, category.cat_name 
+                                    from product, category where product.cat_id = category.cat_id ");
+                                    }
+                                    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                                        ?>
+
+
+
+                                    <tr>
+                                        <td class="shoping__cart__item" style="width: 1000px">
+                                            <img src="img/<?php echo $row['pro_image'] ?>" alt="" height="200px" width="200px">
+                                            <h5><?php echo $row["product_name"]; ?></h5>
+                                        </td>
+                                        <td class="shoping__cart__item">
+
+                                            <h5><?php echo $row["cat_name"]; ?></h5>
+                                        </td>
+                                        <td class="shoping__cart__price">
+                                            $<?php echo $row["price"]; ?>
+                                        </td>
+                                        <td class="shoping__cart__price">
+
+
+                                            <?php echo $row["pro_qty"]; ?>
+
+
+                                        </td>
+                                        <td class="shoping__cart__total">
+                                            <a href="?page=edit&&id=<?php echo $row['product_id'] ?>"> EDIT</a>
+                                        </td>
+                                        <td class="shoping__cart__item__close">
+
+                                            <a href="?page=pm&&function=del&&id=<?php echo $row["product_id"]; ?>"
+                                                onclick="return deleteConfirm()"><span class="icon_close"></span>
+
+                                        </td>
+                                    </tr>
+                                    <?php
+
+                                    }
+                                    ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-           
-            
+
+
         </div>
     </section>
     <!-- Shopping Cart Section End -->
     <?php
- }
- else{
+} else {
     echo "<script>alert('You are not administrator')</script>";
     echo '<meta http-equiv="refresh" content="0; URL=index.php"/>';
- }
- ?>
+}
+?>
