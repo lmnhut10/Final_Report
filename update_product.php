@@ -13,9 +13,7 @@
                         </ul>
                         <ul>
                         <li ><a  href="?page=pm">All</a></li>
-
-                        <?php Category_List($conn,$sql ); ?>
-                            
+                        <?php Category_List($conn, $sql);?>
                         </ul> 
                     </div>
                 </div>

@@ -34,7 +34,7 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="hero__item set-bg" data-setbg="img/1.jpg">
+                    <div class="hero__item set-bg" data-setbg="img/111.jpg">
                         <!-- <div class="hero__text">
                             <span>NEW ON</span>
                             <h2>Paimon Shop</h2> 
