@@ -17,12 +17,13 @@
                         <ul>
                             <li class="active" data-filter="*" ><a href="?page=content">All</a></li>
                             <?php Featured($conn); ?>
-                            
+
                             
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div class="row featured__filter">
                 <?php
                     if(isset($_GET['id'])){

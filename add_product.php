@@ -9,15 +9,15 @@
                             <i class="fa fa-bars"></i>
                             <span>All departments</span>
                         </div>
-                        <ul>
+                        <!-- <ul>
                             <li><a href="#">Figure</a></li>
                             <li><a href="#">Pillow</a></li>
                             <li><a href="#">Image</a></li>
                             
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9"> 
                     <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="#">
@@ -96,6 +96,9 @@
 		}
 		if(!is_numeric($price)){
 			$err.="<li>Product price must be number</li>";
+		}
+		elseif ($price < 0) {
+			$err .= "<li>Product price cannot be negative</li>";
 		}
 		if(!is_numeric($qty)){
 			$err.="<li>Product quantity must be number</li>";

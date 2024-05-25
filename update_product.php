@@ -188,10 +188,25 @@ echo "<SELECT name ='CategoryList' class='form-control'>
 		$err = "";
 
 		
-		if($err !="")
-		{
-			$err .= "Enter ID</br>";
+		if(trim($id)==""){
+			$err.="<li>Enter product ID, please</li>";
 		}
+		if(trim($proname)==""){
+			$err.="<li>Enter product name, please</li>";
+		}
+		if(!is_numeric($price)){
+			$err.="<li>Product price must be number</li>";
+		}
+		elseif ($price < 0) {
+			$err .= "<li>Product price cannot be negative</li>";
+		}
+		if(!is_numeric($qty)){ 
+			$err.="<li>Product quantity must be number</li>";
+		}
+		if($err!=""){
+			echo "<ul>$err</ul>";
+		}
+		
 		else
 		{
 			if($pic['name'] != "")
@@ -201,10 +216,10 @@ echo "<SELECT name ='CategoryList' class='form-control'>
 				{
 					if($pic['size']<=614400)
 					{
-						// $sql="select * from Product where Product_ID='$id' and Product_Name='$proname'";
-						// $result = mysqli_query($conn, $sql);
-						// if(mysqli_num_rows($result)=="0")
-						// {
+						$sql="select * from Product where Product_ID='$id' and Product_Name='$proname'";
+						$result = mysqli_query($conn, $sql);
+						if(mysqli_num_rows($result)=="0")
+						{
 							copy($pic['tmp_name'], "img/".$pic['name']);
 							$filepic = $pic['name'];
 							
@@ -212,11 +227,11 @@ echo "<SELECT name ='CategoryList' class='form-control'>
 							prodate ='".date('Y-m-d H:i:s')."' where product_id ='$id'";
 							mysqli_query($conn,$sqlString);
 							echo '<meta http-equiv="refresh" content="0;URL=?page=pm"';	
-						// }
-						// else
-						// {
-						// 	echo "Duplicate name</br>";
-						// }
+						}
+						else
+						{
+							echo "Duplicate name</br>";
+						}
 					}
 					else
 					{
@@ -230,20 +245,20 @@ echo "<SELECT name ='CategoryList' class='form-control'>
 			}
 			else
 			{
-				// $sql="SELECT * from Product where Product_ID='$id' and Product_Name='$proname'";
-				// $result = mysqli_query($conn, $sql);
-				// if(mysqli_num_rows($result)=="0")
-// {
+				$sql="SELECT * from Product where Product_ID='$id' and Product_Name='$proname'";
+				$result = mysqli_query($conn, $sql);
+				if(mysqli_num_rows($result)=="0")
+{
 					$sqlString = "UPDATE product set product_name ='$proname', price = '$price', smalldesc ='$short',  detaildesc ='$detail', pro_qty='$qty', cat_id='$cat', 
 					prodate='".date('Y-m-d H:i:s')."' where product_id ='$id'";
 					mysqli_query($conn,$sqlString);
 					echo '<meta http-equiv="refresh" content="0;URL =?page=pm"';	
 					
-				// }
-				// else
-				// {
-				// 	echo "Duplicate name</br>";
-				// }
+				}
+				else
+				{
+					echo "Duplicate name</br>";
+				}
 			}
 		}
 	}
